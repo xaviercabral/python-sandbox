@@ -1,126 +1,95 @@
 
+def menu():
 
+    print("___Xavier's calculator___")
+    print("")
+    print("")
+    print("Calculator options:___")
+    print("")
+    print("")
+    print("1- addition")
+    print("2- subtraction")
+    print("3- multiplication")
+    print("4- division")
+    print("0- Exit/Off")
+
+def operations():
+    problem_solve=-10
+    while problem_solve not in [0,1,2,3,4]:
+        try:
+            problem_solve = int(input("Which of the options would you like to chose?: "))
+            return problem_solve
+        except ValueError:
+            print("please insert a number.")
+            continue
+    print("")
+
+
+
+def numbers():
+    a = int(input("enter first number: "))
+
+
+
+    print("")
+
+    b = int(input("enter second number: "))
+
+    
+
+    print("")
+
+    return a,b
 
 def addition(a,b):
-    print(a+b)
+    return a+b 
+
 
 
 def subtraction(a,b):
-    print(a-b)
+    return a-b
 
 
 def multiplication(a,b):
-    print(a*b)
+    return a*b
 
 
 def division(a,b):
     if b==0:
         print("please choose a different number from 0")
     else:
-        #c = a/b
-        print(a/b)
+        return a/b
 
 ###############
 
-problem_solve = int(input("what is the problem you wanna do?(1- addition, 2- subtraction, 3- multiplication, 4- division, 0- Exit): "))
+operator=1
 
-a = int(input("enter first number: "))
-b = int(input("enter second number: "))
+while operator != 0:
+    
+    menu()
 
-while problem_solve != 0:
+    operator=operations()
 
-    if problem_solve == 1:
 
-        addition(a,b)
+    a,b=numbers()
 
-    elif problem_solve == 2:
-        subtraction(a,b)
+    if operator == 1:
 
-    elif problem_solve == 3:
-        multiplication(a,b)
+        result=addition(a,b)
 
-    elif problem_solve == 4:
-        division(a,b)
+    elif operator == 2:
+        result=subtraction(a,b)
+
+    elif operator == 3:
+        result=multiplication(a,b)
+
+    elif operator == 4:
+        result=division(a,b)
 
     else:
         print("please select one of the listed options")
 
-    problem_solve = int(input("what is the problem you wanna do?(1- addition, 2- subtraction, 3- multiplication, 4- division, 0- Exit): "))
-
-    a = int(input("enter first number: "))
-    b = int(input("enter second number: "))
-
-
-
-
-
-
-
-
-
-#problem_solve = int(input("what is the problem you wanna do?(1- addition, 2- subtraction, 3- multiplication, 4- division, 0- Exit): "))
-"""
-if problem_solve == "addition":
-    print("The sum is: ", a+b)
-elif problem_solve == "subtraction":
-    print("The subtraction is: ", a-b)
-elif problem_solve == "multiplication":
-    print("The multiplication is: ", a*b)
-elif problem_solve == "division":
-    if b==0:
-        print("Infinite Number")
-    else:    
-          print("The division is: ", a/b)
-else:
-     print("Insert one of the options")
-"""
-"""""
-while problem_solve != 0:
-    if problem_solve == 1:
-        def addition(a,b):
-            return a + b
-        c = a+b
-        print(c)
-        addition
-    elif problem_solve == 2:
-        def subtraction(a,b):
-            return a-b
-        c = a-b
-        print(c)
-
-        subtraction
-    elif problem_solve == 3:
-        def multiplication(a,b):
-            return a*b
-        c = a*b
-        print(c)
-
-        multiplication
-    elif problem_solve == 4:
-        def division(a,b):
-            return a/b
-        if b==0:
-            print("please choose a different number")
-        else:
-            c = a/b
-            print(c)
-
-        division
-    else:
-        print("please choose one of the options.")
-
-
-    a = int(input("enter first number: "))
-    b = int(input("enter second number: "))
+    print(result)
+    wait_click=input("Click any key to continue")
+    print("")
     
-    problem_solve = int(input("what is the problem you wanna do?(1- addition, 2- subtraction, 3- multiplication, 4- division, 0- Exit):"))
-    
-   # a = int(input("enter first number: "))
-    #b = int(input("enter second number: "))
-
-
-    c=addition(a,b)
-
-def addition(a,b):
-            return a + b
-    """

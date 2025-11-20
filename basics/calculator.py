@@ -27,15 +27,22 @@ def operations():
 
 
 def numbers():
-    a = int(input("enter first number: "))
-
-
-
+    while 1==1:
+        try:
+            a = int(input("enter first number: "))
+        except ValueError:
+            print("please insert a number.")
+            continue
+        break
     print("")
 
-    b = int(input("enter second number: "))
-
-    
+    while 1==1:
+        try:
+            b = int(input("enter second number: "))
+        except ValueError:
+            print("please insert a number.")
+            continue
+        break
 
     print("")
 

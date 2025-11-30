@@ -14,20 +14,21 @@ def menu():
     print("0- Exit/Off")
 
 def operations():
-    problem_solve=-10
+    problem_solve=-1
     while problem_solve not in [0,1,2,3,4]:
         try:
             problem_solve = int(input("Which of the options would you like to chose?: "))
-            return problem_solve
+            if problem_solve in [0,1,2,3,4]:
+                return problem_solve
         except ValueError:
             print("please insert a number.")
             continue
+    
     print("")
 
 
-
 def numbers():
-    while 1==1:
+    while True:
         try:
             a = int(input("enter first number: "))
         except ValueError:
@@ -36,7 +37,7 @@ def numbers():
         break
     print("")
 
-    while 1==1:
+    while True:
         try:
             b = int(input("enter second number: "))
         except ValueError:
@@ -64,6 +65,7 @@ def multiplication(a,b):
 def division(a,b):
     if b==0:
         print("please choose a different number from 0")
+        return None
     else:
         return a/b
 
@@ -72,11 +74,14 @@ def division(a,b):
 operator=1
 
 while operator != 0:
-    
     menu()
 
     operator=operations()
-
+    
+    
+    if operator == 0:
+        print("goodbye")
+        break
 
     a,b=numbers()
 
@@ -96,7 +101,11 @@ while operator != 0:
     else:
         print("please select one of the listed options")
 
-    print(result)
+    if result == None:
+        print("try again")
+    else:
+        print(result)
+
     wait_click=input("Click any key to continue")
     print("")
     
